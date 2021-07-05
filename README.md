@@ -61,7 +61,6 @@ e.g.
 
 - 03_export_results.py
 
-### Python files with helper functions and should be descriptivly named. utils.py can be used for very general 
 
 ### Model weight directories
 
