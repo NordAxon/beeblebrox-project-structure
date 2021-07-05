@@ -6,27 +6,28 @@ Default project structure for data science projects
     ├── README.md          <- The top-level README for developers using this project.
     │
     ├── data
+    |   |
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   │
     │   └── raw            <- The original, immutable data dump
     |
     ├── notebooks          <- Jupyter notebooks
     |    |
+    │    ├── poc           <- Proof of concept notebooks
+    |    |
     │    ├── eda           <- Exploratory data analysis
     │    │
-    │    ├── poc           <- Proof of concept notebooks
-    │    │
-    │    ├── modelling     <- Used for training and evaluation documentation. Train scripts are run here 
+    │    ├── modelling     <- Used for training and evaluation documentation
     │    │
     │    └── evaluation    <- Evaluation of model results
     │
     │
-    ├── models             <- Storage of model weights in separate folders
+    ├── models             <- Storage of model weights, nested by model architecture
     │    |
-    │    ├── MODEL_X
-    │    │
-    │    └── MODEL_Y
-    │
+    │    ├── ARCH_X        <- Directory for architecture X
+    |        ├── 001_ARCH_X
+    |        │
+    |        └── 002_ARCH_X  
     │  
     ├── src                 <- Source code to use in this project.
     |    |
@@ -47,6 +48,17 @@ Default project structure for data science projects
     │
     ├── setup.py            <- Makes project pip installable (pip install -e .) so src can be imported
 
+## How to work - phases
+
+#### POC phase
+
+In this phase, you may use some kaggle dataset or a small collected dataset. Focus should be on displaying potential and not building a whole sophisticated system.
+
+Work in notebooks and focus on training a model on your initial dataset and see if there's any potential.
+
+#### Post-POC phase
+
+Now it's time to explore the real data. Start by working in notebooks/eda to really understand the data you're working with. Expand into all the other unused directories as the code you write in the notebooks becomes robust.
 
 
 ## Naming conventions
@@ -64,13 +76,22 @@ e.g.
 
 ### Model weight directories
 
-- TBD
+Nested by ARCHITECTURE/NBR_ARCHITECTURE.
+
+e.g.
+
+- models/efficientnet_b0/001_efficientnet_b0
+
+- models/resnet50/001_resnet50
 
 
 ## Requirements and installs
 
-- TBD
+Always try to pin your requirements using pip freeze > requirements.txt
 
+Install the repo 
+- in development: pip install -e .
+- in production: pip install .
 
 ## Optional files and their locations
 
