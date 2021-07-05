@@ -25,7 +25,8 @@ Default project structure for data science projects
     ├── models             <- Storage of model weights, nested by model architecture
     │    |
     │    ├── ARCH_X        <- Directory for architecture X
-    |        ├── ARCH_X_001
+    |        ├── ARCH_X_001.h5
+    |        ├── ARCH_X_001.json
     |        │
     |        └── ARCH_X_002  
     │  
