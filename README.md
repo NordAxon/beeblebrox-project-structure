@@ -25,9 +25,9 @@ Default project structure for data science projects
     ├── models             <- Storage of model weights, nested by model architecture
     │    |
     │    ├── ARCH_X        <- Directory for architecture X
-    |        ├── 001_ARCH_X
+    |        ├── ARCH_X_001
     |        │
-    |        └── 002_ARCH_X  
+    |        └── ARCH_X_002  
     │  
     ├── src                 <- Source code to use in this project.
     |    |
@@ -80,9 +80,9 @@ Nested by ARCHITECTURE/NBR_ARCHITECTURE.
 
 e.g.
 
-- models/efficientnet_b0/001_efficientnet_b0
+- models/efficientnet_b0/efficientnet_b0_001
 
-- models/resnet50/001_resnet50
+- models/resnet50/resnet50_003
 
 
 ## Requirements and installs
