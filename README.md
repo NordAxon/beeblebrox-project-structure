@@ -18,7 +18,7 @@ Default project structure for data science projects
     │    │
     │    ├── modelling     <- Used for training and evaluation documentation. Train scripts are run here 
     │    │
-    │    └── evaluation    <- Evaluation of
+    │    └── evaluation    <- Evaluation of model results
     │
     │
     ├── models             <- Storage of model weights in separate folders
@@ -28,7 +28,7 @@ Default project structure for data science projects
     │    └── MODEL_Y
     │
     │  
-    ├── src                 <- Source code for use in this project.
+    ├── src                 <- Source code to use in this project.
     |    |
     │    ├── __init__.py    <- Makes src a Python module
     |    |
