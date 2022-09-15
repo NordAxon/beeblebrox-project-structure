@@ -56,13 +56,13 @@ Default project structure for data science projects
 
 ### POC phase
 
-In this phase, you may use some kaggle dataset or a small collected dataset. Focus should be on displaying potential and not building a whole sophisticated system.
+In this phase, use some kaggle dataset or a small collected dataset. Focus should be on displaying potential and not building a whole sophisticated system.
 
 ### Post-POC phase
 
 Now it's time to explore the real data. Start by working in notebooks/eda to really understand the data you're working with.
 
-When the code you write in the notebooks becomes robust, turn it into functions in src/. If the notebook is still useful for visualization or demonstration purposes, import these functions from src/, otherwise remove the notebook.
+When the code you write in the notebooks becomes robust, turn it into functions in src/. If the notebook is still useful for visualization, experimentation or demonstration purposes, import these functions from src/, otherwise remove the notebook.
 
 Under src/, make sure that all files follow python coding best practices, such as typing, docstrings and naming conventions. All scripts should be used with argparse.
 
