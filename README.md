@@ -1,7 +1,6 @@
 # beeblebrox-project-structure
 Default project structure for data science projects
 
-
     ├── LICENSE
     ├── README.md          <- The top-level README for developers using this project.
     │
@@ -9,62 +8,77 @@ Default project structure for data science projects
     |   |
     │   ├── processed      <- The final, canonical data sets for modeling.
     │   │
-    │   └── raw            <- The original, immutable data dump
+    │   └── raw            <- The original, immutable data dump.
     |
-    ├── notebooks          <- Jupyter notebooks
+    ├── notebooks          <- Jupyter notebooks.
     |    |
-    │    ├── poc           <- Proof of concept notebooks
+    │    ├── poc           <- Proof of concept notebooks.
     |    |
-    │    ├── eda           <- Exploratory data analysis
+    │    ├── eda           <- Exploratory data analysis.
     │    │
-    │    ├── modelling     <- Used for training and evaluation documentation
+    │    ├── modelling     <- Used for modelling exploration and evaluation.
     │    │
-    │    └── evaluation    <- Evaluation of model results
+    │    └── evaluation    <- Evaluation of model results.
     │
-    │
-    ├── models             <- Storage of model weights, nested by model architecture
+    ├── models             <- Storage of model weights, nested by model architecture.
     │    |
-    │    ├── ARCH_X        <- Directory for architecture X
+    │    ├── ARCH_X        <- Directory for architecture X.
     |        ├── ARCH_X_001.h5
     |        ├── ARCH_X_001.json
     |        │
-    |        └── ARCH_X_002  
-    │  
+    |        └── ARCH_X_002
+    │
     ├── src                 <- Source code to use in this project.
     |    |
-    │    ├── __init__.py    <- Makes src a Python module
+    │    ├── __init__.py    <- Makes src a Python module.
     |    |
-    │    ├── utils.py       <- General utility functions   
+    │    ├── utils.py       <- General utility functions.
+    |    |
+    │    ├── main.py        <- Main code for running an API/application.
     │    │
-    │    ├── preparation    <- Data ingestion and retrieval. Retrieves data and puts in data/raw
+    │    ├── app            <- Code used in deployment.
     │    │
-    │    ├── processing     <- Data transformation and pre-processing. Processes data from data/raw -> data/processed
+    │    ├── preparation    <- Data preparation. Retrieves data and puts in data/raw/, transforms to data/processed/ using src/processing/.
     │    │
-    │    └── modelling      <- Model classes, training and evaluation scripts
+    │    ├── processing     <- Data transformation and pre-processing.
+    │    │
+    │    ├── training       <- Code for training and evaluating models.
+    │    │
+    │    └── modelling      <- Model classes.
     │
-    ├── test                <- Code used for testing src/
+    ├── test                <- Code used for testing src/.
     │
-    │    
-    ├── requirements.txt    <- The requirements file for reproducing the analysis environment
+    ├── requirements.txt    <- The requirements file for reproducing the environment.
     │
-    ├── setup.py            <- Makes project pip installable (pip install -e .) so src can be imported
+    ├── setup.py            <- Makes project pip installable so src can be imported.
 
 ## How to work - phases
 
-#### POC phase
+### POC phase
 
 In this phase, you may use some kaggle dataset or a small collected dataset. Focus should be on displaying potential and not building a whole sophisticated system.
 
-Work in notebooks and focus on training a model on your initial dataset and see if there's any potential.
+### Post-POC phase
 
-#### Post-POC phase
+Now it's time to explore the real data. Start by working in notebooks/eda to really understand the data you're working with.
 
-Now it's time to explore the real data. Start by working in notebooks/eda to really understand the data you're working with. Expand into all the other unused directories as the code you write in the notebooks becomes robust.
+When the code you write in the notebooks becomes robust, turn it into functions in src/. If the notebook is still useful for visualization or demonstration purposes, import these functions from src/, otherwise remove the notebook.
 
-When the code is maturing to be used as scripts from the command-line and the project is maturing into a more model comparison/hyperparameter tuning stage, clean up the code and move it to .py files under src folder. Under src, make sure that all files follow python coding best practices, such as typing, docstrings and naming conventions. Under src, as many files as needed should be scripts that can be run from the terminal, and the library argparse should be used to facilitate this.
+Under src/, make sure that all files follow python coding best practices, such as typing, docstrings and naming conventions. All scripts should be used with argparse.
 
-Create as many utils-functions as needed - this keeps the code clean in the other scripts. It is possible to create an entire src/utils folder if needed.
+#### Deployment
 
+Deploying a Python API/application should use the file src/main.py. A deployed API/application should ignore everything in this repo except:
+
+- src/app/
+- src/processing/
+- src/modelling/
+
+and relevant files in
+
+- root/
+- models/
+- src/
 
 ## Naming conventions
 
@@ -78,7 +92,6 @@ e.g.
 - 02_model_training.ipynb
 - 03_export_results.py
 
-
 ### Model weight directories
 
 Nested by ARCHITECTURE/NBR_ARCHITECTURE.
@@ -88,7 +101,6 @@ e.g.
 - models/efficientnet_b0/efficientnet_b0_001
 
 - models/resnet50/resnet50_003
-
 
 ## Requirements and installs
 
@@ -100,7 +112,8 @@ Install the repo
 
 ## Optional files and their locations
 
-- Dockfiler: root
+- Dockerfiler: root
 - .dockerignore: root
 - .env: root
+- requirements_dev.txt: root
 
