@@ -50,7 +50,7 @@ Default project structure for data science projects
     │
     ├── requirements.txt    <- The requirements file for reproducing the environment.
     │
-    ├── setup.py            <- Makes project pip installable so src can be imported.
+    ├── pyproject.toml      <- Makes project pip installable so src can be imported.
 
 ## How to work - phases
 
@@ -112,7 +112,7 @@ Install the repo
 
 ## Optional files and their locations
 
-- Dockerfiler: root
+- Dockerfile: root
 - .dockerignore: root
 - .env: root
 - requirements_dev.txt: root

@@ -1,0 +1,16 @@
+[project]
+name = "src"
+version = "0.0.1"
+authors = [
+  { name="nordaxon", email="info@nordaxon.com" },
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.distutils.egg_info]
+egg_base = "/tmp"  # to avoid polluting project directory we send build artifacts here
